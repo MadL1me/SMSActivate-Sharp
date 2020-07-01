@@ -17,7 +17,7 @@ namespace SMSActivate
             if (result.Contains("ACCESS"))
             {
                 var splited = result.Split(':');
-                Phone = new Phone(result[1], result[2]);
+                Phone = new Phone(splited[1], splited[2]);
             }
         }
     }

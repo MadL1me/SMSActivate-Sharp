@@ -40,7 +40,7 @@ namespace SMSActivate
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("api_key", APIKey);
             content.Add("action", "getNumber");
-            content.Add("isForward", BooleanToString(isForward));
+            content.Add("isForward", isForward.BooleanToString());
             content.Add("ref", ReferalLink);
             content.Add("service", service);
             
@@ -52,16 +52,6 @@ namespace SMSActivate
         {
             return await GetNumberAsync(ServiceInfo.GetServiceId(service), isForward);
         }
-
-        public GetNumberResult GetNumber(string service, bool isForward = false)
-        {
-            var task = GetNumberAsync(service, isForward);
-            task.Wait();
-            return task.Result;
-        }
-
-        public GetNumberResult GetNumber(Service service, bool isForward = false) => GetNumber(ServiceInfo.GetServiceId(service), isForward);
-
 
         public async Task<RequestResult> SetActivationStatus(int activationId, ActivationStatus activationStatus)
         {
@@ -89,14 +79,10 @@ namespace SMSActivate
             return new RequestResult(await Request(new[] { new KeyValuePair<string, string>("api_key", APIKey), new KeyValuePair<string, string>("action", "getBalance") }));
         }
 
-        public RequestResult GetBalance()
+        public async Task<RequestResult> GetBalanceAndCashBack()
         {
-            var response = GetBalanceAsync();
-            response.Wait();
-            return response.Result;
+            return new RequestResult(await Request(new[] { new KeyValuePair<string, string>("api_key", APIKey), new KeyValuePair<string, string>("action", "getBalanceAndCashBack") }));
         }
-
-        private string BooleanToString(bool value) => (value) ? "0" : "1";
 
         #region Requests
 

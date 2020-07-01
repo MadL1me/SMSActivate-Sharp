@@ -6,11 +6,11 @@ namespace SMSActivate.RequestResults
 {
     public class Phone
     {
-        public int Number { get; private set; }
-        public int Id { get; private set; }
+        public string Number { get; private set; }
+        public string Id { get; private set; }
         public bool IsUsed { get; private set; }
 
-        public Phone(int id, int number)
+        public Phone(string id, string number)
         {
             Number = number;
             Id = id;
