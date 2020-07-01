@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMSActivate.RequestResults;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
@@ -62,7 +63,7 @@ namespace SMSActivate
         public GetNumberResult GetNumber(Service service, bool isForward = false) => GetNumber(ServiceInfo.GetServiceId(service), isForward);
 
 
-        public async Task<RequestResult> ChangeActivationStatus(int activationId, ActivationStatus activationStatus)
+        public async Task<RequestResult> SetActivationStatus(int activationId, ActivationStatus activationStatus)
         {
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("api_key", APIKey);
@@ -71,6 +72,16 @@ namespace SMSActivate
             content.Add("id", activationId.ToString());
             var result = await Request(content);
             return new RequestResult(result);
+        }
+
+        public async Task<ActivationStatusResult> GetActivationStatus(int activationId)
+        {
+            Dictionary<string, string> content = new Dictionary<string, string>();
+            content.Add("api_key", APIKey);
+            content.Add("action", "getStatus");
+            content.Add("id", activationId.ToString());
+            var result = await Request(content);
+            return new ActivationStatusResult(result);
         }
 
         public async Task<RequestResult> GetBalanceAsync()
