@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -65,6 +66,7 @@ namespace SMSActivate
         {
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("api_key", APIKey);
+            content.Add("action", "setStatus");
             content.Add("status", ((int)activationStatus).ToString());
             content.Add("id", activationId.ToString());
             var result = await Request(content);
