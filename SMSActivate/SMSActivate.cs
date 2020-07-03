@@ -24,7 +24,6 @@ namespace SMSActivate
         public readonly string DefaultRoute = "https://sms-activate.ru/stubs/handler_api.php";
         public readonly string ReferalLink = "https://sms-activate.ru/?ref=421489";
 
-
         public SMSActivateClient(string APIKey)
         {
             this.APIKey = APIKey;
@@ -53,23 +52,23 @@ namespace SMSActivate
             return await GetNumberAsync(ServiceInfo.GetServiceId(service), isForward);
         }
 
-        public async Task<RequestResult> SetActivationStatus(int activationId, ActivationStatus activationStatus)
+        public async Task<RequestResult> SetActivationStatus(string activationId, ActivationStatus activationStatus)
         {
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("api_key", APIKey);
             content.Add("action", "setStatus");
             content.Add("status", ((int)activationStatus).ToString());
-            content.Add("id", activationId.ToString());
+            content.Add("id", activationId);
             var result = await Request(content);
             return new RequestResult(result);
         }
 
-        public async Task<ActivationStatusResult> GetActivationStatus(int activationId)
+        public async Task<ActivationStatusResult> GetActivationStatus(string activationId)
         {
             Dictionary<string, string> content = new Dictionary<string, string>();
             content.Add("api_key", APIKey);
             content.Add("action", "getStatus");
-            content.Add("id", activationId.ToString());
+            content.Add("id", activationId);
             var result = await Request(content);
             return new ActivationStatusResult(result);
         }

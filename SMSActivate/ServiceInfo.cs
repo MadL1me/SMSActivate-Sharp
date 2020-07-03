@@ -31,8 +31,6 @@ namespace SMSActivate
 
     public static class ServiceInfo
     {
-        static string a = "a";
-
         private static Dictionary<Service, string> _servicesId = new Dictionary<Service, string>()
         {
             {Service.Vkontakte, "vk"}, {Service.Telegram, "tg"}, {Service.AnyOther, "ot"}, {Service.Google, "go"},

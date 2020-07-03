@@ -1,9 +1,9 @@
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\bin\Debug\netstandard2.0\SMSActivate.deps.json
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\bin\Debug\netstandard2.0\SMSActivate.dll
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\bin\Debug\netstandard2.0\SMSActivate.pdb
-C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.csprojAssemblyReference.cache
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.csproj.CoreCompileInputs.cache
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.AssemblyInfoInputs.cache
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.AssemblyInfo.cs
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.dll
 C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.pdb
+C:\Users\sn0wy\Desktop\Projects\SMSActivateLib\SMSActivate\obj\Debug\netstandard2.0\SMSActivate.csprojAssemblyReference.cache
